@@ -1,7 +1,9 @@
 package com.example.vkintership.data.model
 
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class UserModel(
     @SerializedName("avatar_url")
     var avatarUrl: String? = null,
@@ -17,4 +19,4 @@ data class UserModel(
 
     @SerializedName("display_name")
     var displayName: String? = null,
-)
+) : java.io.Serializable

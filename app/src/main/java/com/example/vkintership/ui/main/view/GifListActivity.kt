@@ -1,6 +1,5 @@
 package com.example.vkintership.ui.main.view
 
-import android.app.SearchManager
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -35,8 +34,6 @@ class GifListActivity : AppCompatActivity() {
         setupViewModel()
         setupObserver()
         setupUI()
-
-        // TODO: сделать вторую активити + пагинация
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -106,7 +103,9 @@ class GifListActivity : AppCompatActivity() {
     }
 
     private fun onGifClick(gif: GifModel) {
-        //TODO: открывать активити с подробным описанием гифки
+        val intent = Intent(this, GifDetailsActivity::class.java)
+        intent.putExtra("gif", gif)
+        startActivity(intent)
     }
 
     private fun getData(query: String) {

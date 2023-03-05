@@ -1,7 +1,9 @@
 package com.example.vkintership.data.model
 
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class GifModel(
     @SerializedName("type")
     var type: String = "gif",
@@ -57,12 +59,9 @@ data class GifModel(
     @SerializedName("trending_datetime")
     var trendingDateTime: String? = null,
 
-//  TODO:  @SerializedName("images")
-//    var images: ImagesModel? = null,
-
     @SerializedName("title")
     var title: String? = null,
 
     @SerializedName("alt_text")
     var altText: String? = null,
-)
+) : java.io.Serializable
